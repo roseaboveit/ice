@@ -21,7 +21,7 @@ class PartyPref
 		@ice_cream_hash.merge!(input_hash)
 	end
 	# Gets the hashes of multiple users
-	def get_another_user
+	def get_another_user #---->Array
 		puts "Are there any more guests coming?"
 		more_guests = gets.chomp
 		until more_guests == "no"
@@ -30,8 +30,16 @@ class PartyPref
 			more_guests = gets.chomp
 		end	
 		@ice_cream_hash	
+
+		@ice_cream_hash.each do |key, value|
+			@flavors.push(value)
+		end
+		@flavors.sort
 	end
 
 end
-#puts PartyPref.new.get_another_user
-puts PartyPref.new.get_info
+
+birthday = PartyPref.new.get_another_user
+puts birthday
+
+#puts PartyPref.new.get_flavors
