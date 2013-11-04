@@ -1,5 +1,5 @@
 # Get info from a user and returns a hash
-class Party_pref
+class PartyPref
 	attr_accessor :ice_cream_hash
 
 	def initialize
@@ -15,7 +15,7 @@ class Party_pref
 	end
 	# Merge the hashes into a master hash
 	def merge_usr_icecream_choice(master_hash, input_hash)
-		master_hash.merge(input_hash)
+		master_hash.merge!(input_hash)
 	end
 	# Gets the hashes of multiple users
 	def get_another_user
@@ -29,5 +29,5 @@ class Party_pref
 		@ice_cream_hash
 	end
 
-puts get_another_user
 end
+puts PartyPref.new.get_another_user
